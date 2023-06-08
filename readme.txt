@@ -1,6 +1,6 @@
 Hello!
 
-Hope you are well.
+Hope you doing well.
 
 Instructions for use:
 
