@@ -78,12 +78,18 @@ def main():
                 st.dataframe(session_state['df'])
     with col2:
         if 'df' in session_state and session_state['df'] is not None:
-            st.download_button(
-                label = 'Generate CSV',
-                data = session_state['df'].to_csv().encode('utf-8'),
-                file_name = f'{category}.csv',
-                mime='text/csv'
-            )
-            st.success(f'CSV file "{category}.csv" generated successfully!')
+            if st.button('Generate CSV'):
+                progress_bar = st.progress(0)
+                sleep(1)
+                progress_bar.progress(40)
+                sleep(1)
+                progress_bar.progress(100)
+                st.download_button(
+                    label = 'Download CSV',
+                    data = session_state['df'].to_csv().encode('utf-8'),
+                    file_name = f'{category}.csv',
+                    mime='text/csv'
+                )
+                st.success(f'CSV file "{category}.csv" generated successfully!')
                 
 main()
