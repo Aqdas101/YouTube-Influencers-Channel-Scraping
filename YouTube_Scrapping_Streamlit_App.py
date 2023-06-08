@@ -77,11 +77,16 @@ def main():
                 st.success(f'Congrats! You successfully scrap {num_channels} channels!')
                 st.dataframe(session_state['df'])
     with col2:
-        if st.button('Generate CSV') and 'df' in session_state and session_state['df'] is not None:
-            progress_bar = st.progress(0) 
+        if 'df' in session_state and session_state['df'] is not None:
+            st.download_button(
+                label = 'Generate CSV',
+                data = session_state['df'].to_csv().encode('utf-8'),
+                file_name = f'{category}.csv',
+                mime='text/csv'
+            )
+            progress_bar = st.progress(0)
             sleep(1)
             progress_bar.progress(30)
-            session_state['df'].to_csv(f'{category}.csv')
             sleep(1)
             progress_bar.progress(100)
             st.success(f'CSV file "{category}.csv" generated successfully!')
