@@ -7,7 +7,7 @@ from time import sleep
 
 
 def scrap(category, max_result):
-    api_key = 'AIzaSyBTPiZDPJtV8cPVGVLNLyg4IbnIdjbZiGA'
+    api_key = st.secrets['api_key']
     youtube = build('youtube', 'v3', developerKey=api_key)
     
     request = youtube.search().list(
