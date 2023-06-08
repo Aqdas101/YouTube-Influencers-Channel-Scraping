@@ -84,11 +84,6 @@ def main():
                 file_name = f'{category}.csv',
                 mime='text/csv'
             )
-            progress_bar = st.progress(0)
-            sleep(1)
-            progress_bar.progress(30)
-            sleep(1)
-            progress_bar.progress(100)
             st.success(f'CSV file "{category}.csv" generated successfully!')
                 
 main()
