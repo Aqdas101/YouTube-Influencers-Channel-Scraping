@@ -47,6 +47,8 @@ def scrap(category, max_result):
     return my_channels
 
 def user_feedback():
+    
+    col1, col2 = st.columns(2)
 
     with col2:
         st.markdown(
