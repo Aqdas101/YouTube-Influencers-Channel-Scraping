@@ -55,7 +55,7 @@ def user_feedback():
             "<h3 style='text-align: center;'>Would you like to share some quick feedback?</h3>",
             unsafe_allow_html=True
         )
-        st.image('feedback.png', width=150)
+#         st.image('feedback.png', width=150)
     with col1:
         name = st.text_input('Please enter your name')
         feedback = st.text_area('Provide your feedback')
