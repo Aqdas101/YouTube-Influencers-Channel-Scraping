@@ -4,6 +4,8 @@ import pandas as pd
 from streamlit import session_state
 from time import sleep
 from google.cloud import firestore
+import json
+from google.oauth2 import service_account
 
 
 
@@ -48,6 +50,9 @@ def scrap(category, max_result):
     return my_channels
 
 def user_feedback():
+    key_dict = json.loads(st.secrets['textkey'])
+    creds = service_account.Credentials.from_service_account_info(key_dict)
+    db = firestore.Client(credentials=creds)
     
     col1, col2 = st.columns(2)
 
@@ -66,6 +71,9 @@ def user_feedback():
     with st.spinner():
         if st.button('Let Us Know'):
             st.success("Thanks for the feedback")
+            
+    doc_ref = db.collection('Name').document(str(datetime.now()))
+    doc_ref.set({'Name': name, 'feedback': feedback})
             
     return name, feedback
 
