@@ -73,9 +73,10 @@ def user_feedback():
     with st.spinner():
         if st.button('Let Us Know'):
             st.success("Thanks for the feedback")
+            doc_ref = db.collection('Name').document(str(datetime.now()))
+            doc_ref.set({'Name': name, 'feedback': feedback})
             
-    doc_ref = db.collection('Name').document(str(datetime.now()))
-    doc_ref.set({'Name': name, 'feedback': feedback})
+    
             
     return name, feedback
 
