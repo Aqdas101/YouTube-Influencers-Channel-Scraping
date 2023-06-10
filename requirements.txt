@@ -1,3 +1,5 @@
 google-api-python-client
 streamlit
 pandas
+google-auth-oauthlib
+google-cloud-firestore
