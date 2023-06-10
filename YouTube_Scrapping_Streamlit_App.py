@@ -46,6 +46,25 @@ def scrap(category, max_result):
         
     return my_channels
 
+def user_feedback():
+
+    with col2:
+        st.markdown(
+            "<h3 style='text-align: center;'>Would you like to share some quick feedback?</h3>",
+            unsafe_allow_html=True
+        )
+        st.image('feedback.png', width=150)
+    with col1:
+        name = st.text_input('Please enter your name')
+        feedback = st.text_area('Provide your feedback')
+
+
+    with st.spinner():
+        if st.button('Let Us Know'):
+            st.success("Thanks for the feedback")
+            
+    return name, feedback
+
 def main():
     if 'df' not in session_state:
         session_state['df'] = None
@@ -91,5 +110,9 @@ def main():
                     mime='text/csv'
                 )
                 st.success(f'CSV file "{category}.csv" generated successfully!')
+                
+    name, feedback = user_feedback()
+                
+              
                 
 main()
