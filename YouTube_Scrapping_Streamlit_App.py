@@ -113,6 +113,8 @@ def main():
                 )
                 st.success(f'CSV file "{category}.csv" generated successfully!')
                 
+    st.markdown("<br><br><br>", unsafe_allow_html=True)
+                
     name, feedback = user_feedback()
                 
               
