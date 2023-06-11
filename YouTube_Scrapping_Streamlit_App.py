@@ -58,14 +58,14 @@ def user_feedback():
     
     col1, col2 = st.columns(2)
 
-    with col2:
+    with col1:
         st.markdown('<br><br><br>', unsafe_allow_html=True)
         st.markdown(
             "<h3 style='text-align: center;'>Would you like to share some quick feedback?</h3>",
             unsafe_allow_html=True
         )
 #         st.image('feedback.png', width=150)
-    with col1:
+    with col2:
         name = st.text_input('Please enter your name')
         feedback = st.text_area('Provide your feedback')
 
