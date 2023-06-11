@@ -60,10 +60,10 @@ def user_feedback():
 
     with col1:
         st.markdown('<br><br><br>', unsafe_allow_html=True)
-        st.markdown(
-            "<h3 style='text-align: center;'>Would you like to share some quick feedback?</h3>",
-            unsafe_allow_html=True
-        )
+       st.markdown(
+        "<h3 style='text-align: center; color: yellow;'>Would you like to share some quick feedback?</h3>",
+        unsafe_allow_html=True
+            )
 #         st.image('feedback.png', width=150)
 
     with col2:
