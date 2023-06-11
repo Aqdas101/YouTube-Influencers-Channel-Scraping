@@ -61,9 +61,9 @@ def user_feedback():
     with col1:
         st.markdown('<br><br><br>', unsafe_allow_html=True)
         st.markdown(
-            "<h2 style='text-align: center; color: #4B244A;'><strong>I Would  Love Hearing From You</strong> </h2>",
-            unsafe_allow_html=True
-                )
+        "<h2 style='text-align: center; color: #4B244A; font-weight: bold; text-transform: uppercase; letter-spacing: 2px;'>I WOULD LOVE HEARING FROM YOU</h2>",
+         unsafe_allow_html=True
+            )
 #         st.image('feedback.png', width=150)
 
     with col2:
