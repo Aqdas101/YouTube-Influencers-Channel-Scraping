@@ -65,7 +65,7 @@ def user_feedback():
             unsafe_allow_html=True
         )
 #         st.image('feedback.png', width=150)
-         with st.spinner():
+        with st.spinner():
             if st.button('Let Us Know'):
                 st.success("Thank you so much for the feedback")
                 doc_ref = db.collection('my_feedbacks').document(str(datetime.now()))
