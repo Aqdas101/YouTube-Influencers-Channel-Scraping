@@ -65,19 +65,17 @@ def user_feedback():
             unsafe_allow_html=True
         )
 #         st.image('feedback.png', width=150)
+         with st.spinner():
+            if st.button('Let Us Know'):
+                st.success("Thank you so much for the feedback")
+                doc_ref = db.collection('my_feedbacks').document(str(datetime.now()))
+                doc_ref.set({'Name': name, 'feedback': feedback})
+
     with col2:
         name = st.text_input('Please enter your name')
         feedback = st.text_area('Provide your feedback')
 
 
-    with st.spinner():
-        if st.button('Let Us Know'):
-            st.success("Thank you so much for the feedback")
-            doc_ref = db.collection('my_feedbacks').document(str(datetime.now()))
-            doc_ref.set({'Name': name, 'feedback': feedback})
-            
-    
-            
     return name, feedback
 
 def main():
