@@ -74,6 +74,10 @@ def user_feedback():
                 st.success("Thank you so much for the feedback")
                 doc_ref = db.collection('my_feedbacks').document(str(datetime.now()))
                 doc_ref.set({'Name': name, 'feedback': feedback})
+                st.markdown('<a href="https://www.buymeacoffee.com/aqdasansari"><img \
+                src="https://img.buymeacoffee.com/button-api/?text=\
+                Buy me a coffee&emoji=&slug=aqdasansari&button_colour=FFDD00&\
+                font_colour=000000&font_family=Comic&outline_colour=000000&coffee_colour=ffffff" /></a>', unsafe_allow_html=True)
 
 
     return name, feedback
@@ -127,10 +131,7 @@ def main():
     st.markdown("<br><br><br>", unsafe_allow_html=True)
                 
     name, feedback = user_feedback()
-    st.markdown('<a href="https://www.buymeacoffee.com/aqdasansari">\
-    <img src="https://img.buymeacoffee.com/button-api/?\
-    text=Buy me a coffee&emoji=&slug=aqdasansari&button_colour=40DCA5&font_colour=ffffff&font_\
-    family=Cookie&outline_colour=000000&coffee_colour=FFDD00" /></a>', unsafe_allow_html=True)
+    
                 
               
                 
